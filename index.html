@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tasty Bites - Local Flavor</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/resources/logo.svg">
+  <style>
+    :root {
+      --primary-color: #dc3545;
+      --dark-color: #212529;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    .navbar {
+      background: var(--dark-color);
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar-brand {
+      font-family: 'Satisfy', cursive;
+      font-size: 1.8rem;
+      color: #fff !important;
+    }
+
+    .nav-link {
+      color: #fff !important;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--primary-color) !important;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://cdn.pixabay.com/photo/2017/07/25/09/08/pizza-oven-2537308_640.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+
+    .hero h1 {
+      font-family: 'Satisfy', cursive;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    }
+
+    .section-title {
+      font-family: 'Satisfy', cursive;
+      font-size: 2.2rem;
+      color: var(--dark-color);
+      margin-bottom: 1.5rem;
+    }
+
+    .card {
+      border: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .card-img-top {
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .btn-dark {
+      background: var(--dark-color);
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-dark:hover {
+      background: var(--primary-color);
+    }
+
+    footer {
+      background: var(--dark-color);
+      color: #fff;
+      padding: 2rem 0;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    footer a:hover {
+      color: var(--primary-color);
+    }
+
+    .opening-hours {
+      background: #f8f9fa;
+      padding: 3rem 0;
+    }
+
+    .opening-hours ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .opening-hours li {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Mobile-first media queries */
+    @media (min-width: 576px) {
+      .hero {
+        height: 60vh;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+      }
+
+      .card-img-top {
+        height: 200px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        height: 70vh;
+      }
+
+      .hero h1 {
+        font-size: 4rem;
+      }
+
+      .card-img-top {
+        height: 220px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .navbar-nav {
+        gap: 1rem;
+      }
+
+      .card-img-top {
+        height: 240px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Tasty Bites</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#hours">Hours</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div>
+      <h1>Welcome to Tasty Bites</h1>
+      <p class="lead">Savor the Flavor of Local Comfort Food</p>
+    </div>
+  </div>
+
+  <!-- Menu Section -->
+  <section id="menu" class="py-5">
+    <div class="container">
+      <h2 class="text-center section-title">Our Menu</h2>
+      <!-- Main Dishes -->
+      <h3 class="text-center mb-4">Main Dishes</h3>
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card h-100">
+            <img src="https://cdn.pixabay.com/photo/2023/10/08/13/03/ai-generated-8302142_640.jpg" class="card-img-top" alt="Classic Burger">
+            <div class="card-body">
+              <h5 class="card-title">Classic Burger</h5>
+              <p class="card-text">Juicy beef patty with fresh lettuce, tomato, and our signature sauce.</p>
+              <p class="fw-bold">$12.99</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card h-100">
+            <img src="https://cdn.pixabay.com/photo/2020/05/17/04/22/pizza-5179939_1280.jpg" class="card-img-top" alt="Wood-fired Pizza">
+            <div class="card-body">
+              <h5 class="card-title">Wood-fired Pizza</h5>
+              <p class="card-text">Stone-baked with fresh ingredients and a crispy crust.</p>
+              <p class="fw-bold">$15.99</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card h-100">
+            <img src="https://cdn.pixabay.com/photo/2020/09/17/12/38/pasta-5579058_1280.jpg" class="card-img-top" alt="Creamy Alfredo">
+            <div class="card-body">
+              <h5 class="card-title">Creamy Alfredo</h5>
+              <p class="card-text">Rich, creamy sauce with perfectly cooked pasta.</p>
+              <p class="fw-bold">$14.99</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card h-100">
+            <img src="https://cdn.pixabay.com/photo/2017/09/16/19/21/salad-2756467_1280.jpg" class="card-img-top" alt="Caesar Salad">
+            <div class="card-body">
+              <h5 class="card-title">Caesar Salad</h5>
+              <p class="card-text">Crisp romaine, parmesan, croutons, and house-made dressing.</p>
+              <p class="fw-bold">$9.99</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card h-100">
+            <img src="https://cdn.pixabay.com/photo/2021/06/21/15/03/salmon-6353898_1280.jpg" class="card-img-top" alt="Grilled Salmon">
+            <div class="card-body">
+              <h5 class="card-title">Grilled Salmon</h5>
+              <p class="card-text">Fresh salmon fillet with lemon herb sauce and roasted vegetables.</p>
+              <p class="fw-bold">$18.99</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card h-100">
+            <img src="https://cdn.pixabay.com/photo/2022/07/25/20/15/grilled-chicken-7344499_1280.jpg" class="card-img-top" alt="Creamy Alfredo">
+            <div class="card-body">
+              <h5 class="card-title">Grilled Chicken</h5>
+              <p class="card-text">Rich and flavorfull grilled chiken</p>
+              <p class="fw-bold">$14.99</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Desserts -->
+      <h3 class="text-center mb-4 mt-5">Desserts</h3>
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card h-100">
+            <img src="https://cdn.pixabay.com/photo/2015/04/10/10/30/kladdkaka-716024_1280.jpg" class="card-img-top" alt="Chocolate Lava Cake">
+            <div class="card-body">
+              <h5 class="card-title">Chocolate Lava Cake</h5>
+              <p class="card-text">Warm, gooey chocolate center with vanilla ice cream.</p>
+              <p class="fw-bold">$7.99</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card h-100">
+            <img src="https://cdn.pixabay.com/photo/2019/07/30/01/58/cheesecake-4371777_1280.jpg" class="card-img-top" alt="Cheesecake">
+            <div class="card-body">
+              <h5 class="card-title">New York Cheesecake</h5>
+              <p class="card-text">Creamy cheesecake with a graham cracker crust and berry compote.</p>
+              <p class="fw-bold">$6.99</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card h-100">
+            <img src="https://cdn.pixabay.com/photo/2019/11/07/13/05/waffle-4608843_1280.jpg" class="card-img-top" alt="Cheesecake">
+            <div class="card-body">
+              <h5 class="card-title">Waffle Candy Ice Cream</h5>
+              <p class="card-text">Creamy Ice Cream, with crunchy waffle.</p>
+              <p class="fw-bold">$6.99</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Drinks -->
+      <h3 class="text-center mb-4 mt-5">Drinks</h3>
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card h-100">
+            <img src="https://cdn.pixabay.com/photo/2020/11/03/09/23/lemonade-5709188_1280.jpg" class="card-img-top" alt="Fresh Lemonade">
+            <div class="card-body">
+              <h5 class="card-title">Fresh Lemonade</h5>
+              <p class="card-text">House-made with real lemons and a touch of mint.</p>
+              <p class="fw-bold">$3.99</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card h-100">
+            <img src="https://cdn.pixabay.com/photo/2013/07/25/12/06/drink-167053_640.jpg" class="card-img-top" alt="Iced Tea">
+            <div class="card-body">
+              <h5 class="card-title">Iced Tea</h5>
+              <p class="card-text">Refreshing black tea, served sweet or unsweetened.</p>
+              <p class="fw-bold">$2.99</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card h-100">
+            <img src="https://cdn.pixabay.com/photo/2014/09/26/19/51/drink-462776_1280.jpg" class="card-img-top" alt="Iced Tea">
+            <div class="card-body">
+              <h5 class="card-title">Coke Products</h5>
+              <p class="card-text">Coke Products , refreshing cold softdrinks</p>
+              <p class="fw-bold">$2.99</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center section-title">About Us</h2>
+      <p class="text-center lead">Founded in 1998, Tasty Bites is a family-owned restaurant rooted in the heart of New York. Our passion for comfort food drives us to source the freshest local ingredients, crafting dishes that warm the soul. From our signature burgers to our wood-fired pizzas, every plate tells a story of tradition and love.</p>
+      <p class="text-center">Our team is dedicated to creating a welcoming atmosphere where families, friends, and food lovers can gather. Over the years, we’ve become a community staple, hosting local events and supporting nearby farmers. Join us to experience the flavors that have made Tasty Bites a beloved name for over two decades.</p>
+      <div class="text-center mt-4">
+        <a href="#contact" class="btn btn-dark">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Opening Hours Section -->
+  <section id="hours" class="opening-hours">
+    <div class="container">
+      <h2 class="text-center section-title">Opening Hours</h2>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+          <ul class="text-center">
+            <li><strong>Monday - Thursday:</strong> 11:00 AM - 9:00 PM</li>
+            <li><strong>Friday - Saturday:</strong> 11:00 AM - 10:00 PM</li>
+            <li><strong>Sunday:</strong> 12:00 PM - 8:00 PM</li>
+            <li><em>Closed on major holidays.</em></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="text-center section-title">Get in Touch</h2>
+      <div class="row g-4">
+        <div class="col-12 col-md-6">
+          <form action="#" method="POST">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" class="form-control" placeholder="your@email.com" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" class="form-control" rows="5" placeholder="Say hello!" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-dark">Send Message</button>
+          </form>
+        </div>
+        <div class="col-12 col-md-6">
+          <iframe class="w-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.876119022752!2d-73.97692282413374!3d40.76474933438498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258f08bbdb40d%3A0xaceb6e07efca2e00!2s10%20Central%20Park%20S%2C%20New%20York%2C%20NY%2010019!5e0!3m2!1sen!2sus!4v1744248784479!5m2!1sen!2us" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <div class="container">
+      <p class="mb-2">© 2025 Tasty Bites. All rights reserved.</p>
+      <div class="mb-2">
+        <a href="#" class="me-3">Facebook</a>
+        <a href="#" class="me-3">Instagram</a>
+        <a href="#">Twitter</a>
+      </div>
+      <p><small>123 Central Park S, New York, NY 10019 | (555) 123-4567</small></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
